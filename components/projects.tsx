@@ -18,6 +18,7 @@ export default function Projects() {
       image: "/images/project-1.png",
       tags: ["React", "Node.js", "MongoDB", "Tailwind","Express.js"],
       github: "https://github.com/subhashadhikari057/Trekking-Gear-Rental",
+      live: "https://trekking-gear-rental.vercel.app/"
     
     },
     {
@@ -27,7 +28,7 @@ export default function Projects() {
       image: "/images/project-2.png",
       tags: ["Next.js ", "TailwindCSS", "HTML5/CSS3 ", "Spring Boot","Spring Data JPA","MongoDB"],
       github: "https://github.com/subhashadhikari057/nepnews-frontend",
-      live: "https://project2.example.com",
+      // live: "https://project2.example.com",
     },
     {
       id: 3,
@@ -36,7 +37,7 @@ export default function Projects() {
       image: "/images/project-3.png",
       tags: ["Java", "JSwing", "MySQL"],
       github: "https://github.com/subhashadhikari057/Quiz_Application",
-      live: "https://project3.example.com",
+      // live: "https://project3.example.com",
     },
   ]
 
@@ -140,15 +141,17 @@ export default function Projects() {
                     <Github size={18} />
                     <span>Code</span>
                   </a>
-                  {/* <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-white hover:text-mario-green transition-colors"
-                  >
-                    <ExternalLink size={18} />
-                    <span>Live Demo</span>
-                  </a> */}
+                  {project.live && (
+  <a
+    href={project.live}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-1 text-white hover:text-mario-green transition-colors"
+  >
+    <ExternalLink size={18} />
+    <span>Live Demo</span>
+  </a>
+)}
                 </div>
               </div>
             </motion.div>
