@@ -113,7 +113,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-mario-yellow mb-1">Phone</h3>
-                <p className="text-mario-cream">+977-98278286327</p>
+                <p className="text-mario-cream">+977-9827828632</p>
               </div>
             </motion.div>
 
