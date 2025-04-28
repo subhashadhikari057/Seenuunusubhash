@@ -17,7 +17,7 @@ export default function Footer() {
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 0.5, repeat: Number.POSITIVE_INFINITY, repeatDelay: 5 }}
               >
-                <span className="text-mario-red">M</span>
+                <span className="text-mario-red">Subhash</span>
                 <span className="text-white">Dev</span>
               </motion.div>
             </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-mario-dark-lighter mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-mario-cream text-sm">&copy; {new Date().getFullYear()} Mario Dev. All rights reserved.</p>
+          <p className="text-mario-cream text-sm">&copy; {new Date().getFullYear()} Subhash Dev. All rights reserved.</p>
 
           <div className="flex items-center mt-4 md:mt-0">
             <p className="text-mario-cream text-sm flex items-center">

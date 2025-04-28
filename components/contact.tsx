@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import emailjs from 'emailjs-com'
 
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
@@ -26,23 +27,35 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
+  
+    try {
+      await emailjs.send(
+        'service_k428d14',  // Your actual service ID
+        'template_deekjrr',  // <-- Replace with your Template ID
+        {
+          from_name: formState.name,
+          reply_to: formState.email,
+          message: formState.message,
+        },
+        'oyFxAwxgy1spodCPl'  // <-- Replace with your Public Key
+      )
+  
       setIsSubmitting(false)
       setIsSubmitted(true)
       setFormState({ name: "", email: "", message: "" })
-
+  
       // Reset success message after 5 seconds
       setTimeout(() => {
         setIsSubmitted(false)
       }, 5000)
-    }, 1500)
+    } catch (error) {
+      console.error('Failed to send message:', error)
+      setIsSubmitting(false)
+    }
   }
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -131,7 +144,7 @@ export default function Contact() {
               <h3 className="text-xl font-bold text-mario-yellow mb-4">Connect With Me</h3>
               <div className="flex space-x-4">
                 <motion.a
-                  href="https://github.com/username"
+                  href="https://github.com/subhash057"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-mario-dark-lighter p-3 rounded-full hover:bg-mario-red/20 transition-colors"
@@ -141,7 +154,7 @@ export default function Contact() {
                   <Github className="h-6 w-6" />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com/in/username"
+                  href="https://www.linkedin.com/in/subhash-adhikari-045018305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-mario-dark-lighter p-3 rounded-full hover:bg-mario-blue/20 transition-colors"
@@ -151,7 +164,7 @@ export default function Contact() {
                   <Linkedin className="h-6 w-6" />
                 </motion.a>
                 <motion.a
-                  href="https://twitter.com/username"
+                  href="https://x.com/seenu_subhash?s=21"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-mario-dark-lighter p-3 rounded-full hover:bg-mario-green/20 transition-colors"
