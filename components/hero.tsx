@@ -109,7 +109,7 @@ export default function Hero({ onSectionChange }: HeroProps) {
           >
             Hey! I'm{" "}
             <span className="text-[#E52521]">Subhash</span>{" "}
-            <span className="text-white">Adhikari</span>
+            <span className="text-white"></span>
             <br />
             <span className="text-mario-red">Full-Stack</span> Developer
           </motion.h1>
