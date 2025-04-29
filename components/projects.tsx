@@ -28,7 +28,7 @@ export default function Projects() {
       image: "/images/project-2.png",
       tags: ["Next.js ", "TailwindCSS", "HTML5/CSS3 ", "Spring Boot","Spring Data JPA","MongoDB"],
       github: "https://github.com/subhashadhikari057/nepnews-frontend",
-      // live: "https://project2.example.com",
+      live: "https://nepnews-frontend.vercel.app/",
     },
     {
       id: 3,
