@@ -12,16 +12,22 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import LoadingScreen from "@/components/loading-screen"
 
+
+
 export default function Home() {
   const [loading, setLoading] = useState(true)
   const [activeSection, setActiveSection] = useState("hero")
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false)
+  
+      // 🧨 Force remove all Tailwind cursor utilities
+      document.querySelectorAll('[class*="cursor-"]').forEach((el) => {
+        el.className = el.className.replace(/cursor-\w+/g, '')
+      })
     }, 2500)
-
+  
     return () => clearTimeout(timer)
   }, [])
 
@@ -44,6 +50,7 @@ export default function Home() {
             className="bg-mario-dark min-h-screen text-white overflow-hidden"
           >
             <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
+            <CustomCursor />
             <main>
               <section id="hero" className="min-h-screen">
                 <Hero onSectionChange={handleSectionChange} />

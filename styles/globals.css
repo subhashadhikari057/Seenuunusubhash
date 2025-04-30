@@ -90,5 +90,12 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    cursor: none;
+  }
+}
+
+@layer base {
+  html, body, * {
+    cursor: none !important;
   }
 }

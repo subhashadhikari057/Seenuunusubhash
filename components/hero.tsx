@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowDown } from "lucide-react"
+import { useState } from "react"
+
 
 interface HeroProps {
   onSectionChange: (section: string) => void
@@ -25,6 +27,8 @@ export default function Hero({ onSectionChange }: HeroProps) {
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [])
+  const [showProfile, setShowProfile] = useState(true)
+
 
   return (
     <div className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
@@ -101,6 +105,28 @@ export default function Hero({ onSectionChange }: HeroProps) {
             />
           </motion.div>
 
+          {/* 👤 Your Image */}
+          <motion.div
+            initial={{ opacity: 0, y: -200 }} // 🚀 starts high above
+            animate={{ opacity: 1, y: 0 }}    // 🎯 drops to normal position
+            transition={{
+              delay: 0.7,
+              duration: 0.8,
+              type: "spring",
+              stiffness: 80,    // how stiff the spring is (more = faster bounce)
+              damping: 7        // how much it settles (less = more bounce)
+            }}
+            className="mx-auto -mt-10 mb-6 rounded-full border-4 border-white overflow-hidden w-40 h-40 shadow-xl"
+>         
+            <Image
+              src="/images/profile.png"
+              alt="Subhash Adhikari"
+              width={160}
+              height={160}
+              className="object-cover w-full h-full"
+              priority
+              />
+            </motion.div>
           <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6 text-white"
             initial={{ y: 20, opacity: 0 }}

@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import Image from "next/image"
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [clicked, setClicked] = useState(false)
-  const [linkHovered, setLinkHovered] = useState(false)
+  const [hovering, setHovering] = useState(false)
   const [hidden, setHidden] = useState(true)
 
   useEffect(() => {
@@ -18,10 +17,6 @@ export default function CustomCursor() {
 
     const handleMouseDown = () => setClicked(true)
     const handleMouseUp = () => setClicked(false)
-
-    const handleLinkHoverStart = () => setLinkHovered(true)
-    const handleLinkHoverEnd = () => setLinkHovered(false)
-
     const handleMouseLeave = () => setHidden(true)
     const handleMouseEnter = () => setHidden(false)
 
@@ -33,8 +28,8 @@ export default function CustomCursor() {
 
     const links = document.querySelectorAll("a, button")
     links.forEach((link) => {
-      link.addEventListener("mouseenter", handleLinkHoverStart)
-      link.addEventListener("mouseleave", handleLinkHoverEnd)
+      link.addEventListener("mouseenter", () => setHovering(true))
+      link.addEventListener("mouseleave", () => setHovering(false))
     })
 
     return () => {
@@ -45,62 +40,59 @@ export default function CustomCursor() {
       document.removeEventListener("mouseenter", handleMouseEnter)
 
       links.forEach((link) => {
-        link.removeEventListener("mouseenter", handleLinkHoverStart)
-        link.removeEventListener("mouseleave", handleLinkHoverEnd)
+        link.removeEventListener("mouseenter", () => setHovering(true))
+        link.removeEventListener("mouseleave", () => setHovering(false))
       })
     }
   }, [])
+
+  const getOffset = () => {
+    if (hovering) return 24
+    if (clicked) return 12
+    return 16
+  }
 
   const cursorVariants = {
     default: {
       width: 32,
       height: 32,
+      backgroundColor: "rgba(229, 37, 33, 0.5)",
     },
     clicked: {
       width: 24,
       height: 24,
+      backgroundColor: "#E52521",
     },
     link: {
       width: 48,
       height: 48,
+      backgroundColor: "#E52521",
     },
   }
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-50 pointer-events-none flex items-center justify-center"
+      className="fixed top-0 left-0 z-[9999] pointer-events-none flex items-center justify-center"
       animate={{
-        x: position.x - (linkHovered ? 24 : clicked ? 12 : 16),
-        y: position.y - (linkHovered ? 24 : clicked ? 12 : 16),
+        x: position.x - getOffset(),
+        y: position.y - getOffset(),
         opacity: hidden ? 0 : 1,
       }}
       transition={{
         type: "spring",
-        damping: 25,
-        stiffness: 300,
-        mass: 0.5,
+        damping: 35,//quicker settle
+        stiffness: 700,//faster
+        mass: 0.2,//lighter
       }}
     >
+      {/* cursor glowing effect */}
+      {/* <div className="absolute w-10 h-10 rounded-full bg-mario-red/20 blur-2xl" /> */}  
       <motion.div
         variants={cursorVariants}
-        animate={linkHovered ? "link" : clicked ? "clicked" : "default"}
-        className="relative"
+        animate={hovering ? "link" : clicked ? "clicked" : "default"}
+        className="rounded-full flex items-center justify-center"
       >
-        {linkHovered ? (
-          <Image
-            src="/images/mario-hand.png"
-            alt="Mario hand cursor"
-            width={48}
-            height={48}
-            className="transform rotate-45"
-          />
-        ) : (
-          <div
-            className={`rounded-full ${clicked ? "bg-mario-red" : "bg-mario-red/50"} flex items-center justify-center`}
-          >
-            <div className="w-1 h-1 bg-white rounded-full" />
-          </div>
-        )}
+        <div className="w-1 h-1 bg-white rounded-full" />
       </motion.div>
     </motion.div>
   )

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CustomCursor from '@/components/custom-cursor'
+
 
 export const metadata: Metadata = {
   title: 'My Portfolio',
@@ -16,8 +18,17 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.png" />
+        {/* cursor override */}
+        <style>{`
+          html, body, * {
+            cursor: none !important;
+          }
+        `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   )
 }

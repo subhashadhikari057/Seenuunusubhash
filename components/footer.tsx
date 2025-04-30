@@ -18,7 +18,7 @@ export default function Footer() {
                 transition={{ duration: 0.5, repeat: Number.POSITIVE_INFINITY, repeatDelay: 5 }}
               >
                 <span className="text-mario-red">Subhash</span>
-                <span className="text-white">Dev</span>
+                <span className="text-white"> Adhikari</span>
               </motion.div>
             </Link>
             <p className="text-mario-cream mb-4 max-w-md">
