@@ -90,20 +90,20 @@ export default function Hero({ onSectionChange }: HeroProps) {
           className="max-w-3xl mx-auto"
         >
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-6 inline-block"
-          >
-            <Image
-              src="/images/mario-logo.png"
-              alt="Mario Developer"
-              width={200}
-              height={100}
-              priority
-              className="mx-auto"
-            />
-          </motion.div>
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ delay: 0.2, duration: 0.5 }}
+  className="mb-6 inline-block hidden sm:block" // ⛔ Hidden on mobile, shown from sm+
+>
+  <Image
+    src="/images/mario-logo.png"
+    alt="Mario Developer"
+    width={200}
+    height={100}
+    priority
+    className="mx-auto"
+  />
+</motion.div>
 
           {/* 👤 Your Image */}
           <motion.div
