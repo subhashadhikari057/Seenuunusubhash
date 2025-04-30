@@ -8,8 +8,12 @@ export default function CustomCursor() {
   const [clicked, setClicked] = useState(false)
   const [hovering, setHovering] = useState(false)
   const [hidden, setHidden] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    // Check screen width on mount
+    setIsMobile(window.innerWidth < 768)
+
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY })
       setHidden(false)
@@ -70,6 +74,8 @@ export default function CustomCursor() {
     },
   }
 
+  if (isMobile) return null // 🔕 no cursor component on mobile
+
   return (
     <motion.div
       className="fixed top-0 left-0 z-[9999] pointer-events-none flex items-center justify-center"
@@ -80,13 +86,11 @@ export default function CustomCursor() {
       }}
       transition={{
         type: "spring",
-        damping: 35,//quicker settle
-        stiffness: 700,//faster
-        mass: 0.2,//lighter
+        damping: 35,
+        stiffness: 700,
+        mass: 0.2,
       }}
     >
-      {/* cursor glowing effect */}
-      {/* <div className="absolute w-10 h-10 rounded-full bg-mario-red/20 blur-2xl" /> */}  
       <motion.div
         variants={cursorVariants}
         animate={hovering ? "link" : clicked ? "clicked" : "default"}

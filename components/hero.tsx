@@ -148,6 +148,7 @@ export default function Hero({ onSectionChange }: HeroProps) {
           >
             Building interactive experiences with code magic
           </motion.p>
+          
 
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -190,21 +191,21 @@ export default function Hero({ onSectionChange }: HeroProps) {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        onClick={() => {
-          const section = document.getElementById("projects")
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth" })
-          }
-        }}
-      >
-        <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
-          <ArrowDown className="text-white h-8 w-8" />
-        </motion.div>
-      </motion.div>
+  className="absolute bottom-[8.1rem] sm:bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1.2, duration: 0.6 }}
+  onClick={() => {
+    const section = document.getElementById("projects")
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+  }}
+>
+  <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
+    <ArrowDown className="text-white h-8 w-8" />
+  </motion.div>
+</motion.div>
     </div>
   )
 }
