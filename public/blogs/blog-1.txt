@@ -1,0 +1,7 @@
+When I first set foot in the world of React, I felt like Mario without a mushroom — small, unsure, but excited. Then I discovered Next.js. It was like grabbing that first power-up: routing became intuitive, and I suddenly had server-side rendering and API routes in my toolkit.
+
+As I built my Mario-themed portfolio, I used dynamic routing like warp pipes. Each section — from Projects to Skills — became a new level. The Hero section? That's my title screen. The Projects grid? Think of it like a bonus stage, showing off what I’ve unlocked.
+
+Static site generation (SSG) and image optimization in Next.js made things fast — like pressing B and running. What really stood out was how easy it was to create a fully functional and blazing-fast website, hosted with zero backend setup, and still feel interactive.
+
+Looking back, Next.js wasn’t just a tool. It was the power-up I didn’t know I needed. And just like Mario, I keep chasing the next flagpole.

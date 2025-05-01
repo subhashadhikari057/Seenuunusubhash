@@ -1,0 +1,9 @@
+Every developer dreads bugs. But while working on this portfolio, I took inspiration from Mario — instead of panicking, I treated bugs like hidden coin blocks.
+
+Did the profile image flicker on load? Great! That was a golden chance to understand layout shifts and suspense behavior. Did a CSS animation break on mobile? Another invisible coin — time to polish my responsive design skills.
+
+This change in mindset made debugging fun. I used the browser console like Mario’s map, tracing through functions and inspecting components with React DevTools like a pro.
+
+I began appreciating bugs for what they are: hidden opportunities. Each fix made my project better. The final level wasn’t about a bug-free build — it was about mastering the tools, the mindset, and the journey.
+
+So now, I smile when a red warning shows up. Because I know... there's a coin behind it.

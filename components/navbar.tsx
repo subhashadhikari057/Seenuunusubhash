@@ -28,7 +28,6 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
     onSectionChange(section)
     setMobileMenuOpen(false)
 
-    // Scroll to section
     const element = document.getElementById(section)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -40,6 +39,7 @@ export default function Navbar({ activeSection, onSectionChange }: NavbarProps) 
     { id: "projects", label: "Projects" },
     { id: "education", label: "Education" },
     { id: "skills", label: "Skills" },
+    { id: "blogs", label: "Blog" },        // ✅ Added Blog section
     { id: "contact", label: "Contact" },
   ]
 

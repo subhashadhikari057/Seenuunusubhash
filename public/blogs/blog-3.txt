@@ -1,0 +1,9 @@
+There’s UI, and then there’s *fun* UI. When designing my Mario-themed portfolio, I knew it had to do more than just showcase projects — it had to bring joy.
+
+From the bouncing question blocks to Mario’s jump on scroll triggers, every element was chosen to evoke a sense of nostalgia and delight. I studied how game interfaces use motion, color, and surprise — and brought those ideas into a modern web experience.
+
+But behind the fun lies solid UX: clean grid layouts, mobile optimization, and accessibility all matter. I made sure every detail — like hover states and button feedback — contributed to both playfulness and clarity.
+
+The lesson? Pixel-perfect design isn’t just about alignment. It’s about emotion. When someone visits my portfolio, I want them to smile, just like they did when they played Mario for the first time.
+
+Design with joy. That’s the real star power.

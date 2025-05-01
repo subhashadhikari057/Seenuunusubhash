@@ -190,7 +190,7 @@ export default function Hero({ onSectionChange }: HeroProps) {
 
       {/* Scroll Down Arrow */}
       <motion.div
-        className="absolute bottom-[5.0rem] sm:bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        className="absolute bottom-[4.0rem] sm:bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}

@@ -140,6 +140,8 @@ export default function Skills() {
             </motion.div>
           ))}
         </motion.div>
+        {/* upskilling */}
+        <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6 }} className="mt-16 text-center" > <div className="inline-block bg-mario-dark px-6 py-4 rounded-lg"> <h4 className="text-lg font-mario text-yellow-400 mb-2">ALWAYS LEVELING UP!</h4> <p className="text-zinc-300">Continuously learning new technologies and improving existing skills</p> </div> </motion.div>
 
         {/* Animated Mario elements */}
         <motion.div
@@ -158,6 +160,7 @@ export default function Skills() {
 
           <div className="absolute bottom-0 left-0 right-0 h-4 bg-mario-green/30 rounded-full" />
         </motion.div>
+        
       </div>
     </div>
   )
