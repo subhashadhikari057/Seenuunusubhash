@@ -1,17 +1,17 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import CustomCursor from '@/components/custom-cursor'
+import type { Metadata } from 'next';
+import './globals.css';
+import CustomCursor from '@/components/custom-cursor';
 
 export const metadata: Metadata = {
   title: 'Subhash Adhikari | Full Stack Developer',
   description: 'Portfolio of Subhash Adhikari – a full stack developer specializing in React, Next.js, and modern web technologies.',
   generator: 'Developer',
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -25,13 +25,16 @@ export default function RootLayout({
         {/* Open Graph (Facebook, LinkedIn) */}
         <meta property="og:title" content="Subhash Adhikari | Full Stack Developer" />
         <meta property="og:description" content="Explore the portfolio of Subhash Adhikari, featuring top projects in web development." />
-        <meta property="og:image" content="/favicon.png" />
+        <meta property="og:image" content="/favicon/android-chrome-512x512.png" />
         <meta property="og:url" content="https://seenusubhash.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
 
-        {/* Favicon and Apple Touch */}
-        <link rel="icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        {/* Favicon and Icons */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
 
         {/* Structured Data for Google */}
@@ -64,5 +67,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }
