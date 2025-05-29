@@ -12,28 +12,39 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "MediScan",
+      description:
+        "MediScan is a full-stack AI-powered healthcare web app using React, Node.js, and MongoDB. It features LLM-based symptom checking via OpenRouter, doctor discovery, appointment booking, role-based dashboards, Google Sign-In, dark mode, and editable medical profiles.",
+      image: "/images/medicare.png",
+      gif: "/videos/MediScan.gif",
+      tags: ["React", "Node.js", "Express.js", "MongoDB", "TailwindCSS", "LLM", "JWT Auth", "Google Sign-In"],
+      github: "https://github.com/subhashadhikari057/MediScan",
+      live: "https://medi-scan-i7ok.vercel.app/",
+    },
+    {
+      id: 2,
       title: "Trekking Gear Rental",
       description:
         "Trail Gear: A full-stack trekking gear rental platform featuring user authentication, inventory management, booking system, and online payment integration.",
       image: "/images/project-1.png",
       gif: "/videos/trekking.gif",
-      tags: ["React", "Node.js", "MongoDB", "Tailwind", "Express.js"],
+      tags: ["React", "Node.js", "MongoDB", "TailwindCSS", "Express.js","JWT Auth"],
       github: "https://github.com/subhashadhikari057/Trekking-Gear-Rental",
       live: "https://trekking-gear-rental.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "NepNews",
       description:
         "NepNews: A full-stack news platform with SEO optimization, real-time article updates, user authentication, admin dashboard for content management, and MongoDB integration.",
       image: "/images/project-2.png",
       gif: "/videos/NepNews.gif",
-      tags: ["Next.js", "TailwindCSS", "HTML5/CSS3", "Spring Boot", "Spring Data JPA", "MongoDB"],
+      tags: ["Next.js", "TailwindCSS", "HTML5/CSS3", "Spring Boot", "Spring Data JPA","JWT Auth", "MongoDB"],
       github: "https://github.com/subhashadhikari057/nepnews-frontend",
       live: "https://nepnews-frontend.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Quiz Application",
       description:
         "A Quiz App built with Java using Swing for the GUI and MySQL for the database. Users can register, log in, take quizzes, and see their scores. The app fetches questions from MySQL and stores user scores. It demonstrates JDBC integration and basic database operations - College Project.",

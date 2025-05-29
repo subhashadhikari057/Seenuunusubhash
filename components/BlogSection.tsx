@@ -22,7 +22,7 @@ export default function Blog() {
   const blogs: BlogEntry[] = [
     {
       id: 1,
-      title: "Leveling Up with Next.js: My Developer Odyssey",
+      title: "Leveling Up : My Developer Odyssey",
       snippet: "From mushroom beginnings to star-powered builds— how Next.js turbocharged my portfolio..",
       contentFile: "/blogs/blog-1.txt",
       date: "1/05/2025",

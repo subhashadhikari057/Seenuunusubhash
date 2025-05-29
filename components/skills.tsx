@@ -15,6 +15,7 @@ export default function Skills() {
       skills: [
         { name: "React", level: 85 },
         { name: "JavaScript", level: 95 },
+        { name: "TypeScript", level: 88 },
         // { name: "TypeScript", level: 85 },
         { name: "HTML/CSS", level: 90 },
         { name: "Next.js", level: 90 },
@@ -32,6 +33,8 @@ export default function Skills() {
         { name: "Python", level: 75 },
         { name: "MongoDB", level: 80 },
         { name: "SQL", level: 70 },
+        { name: "LLM/OpenAI API", level: 90 },
+        
       ],
       icon: "/images/fire-flower.png",
     },
@@ -42,6 +45,7 @@ export default function Skills() {
         { name: "Git", level: 90 },
         { name: "Azure", level: 70 },
         { name: "AWS", level: 75 },
+        { name: "Postman", level: 80 },
         { name: "UI/UX Design", level: 70 },
         { name: "Agile/Scrum", level: 80 },
       ],
