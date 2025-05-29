@@ -16,7 +16,7 @@ export default function Projects() {
       description:
         "MediScan is a full-stack AI-powered healthcare web app using React, Node.js, and MongoDB. It features LLM-based symptom checking via OpenRouter, doctor discovery, appointment booking, role-based dashboards, Google Sign-In, dark mode, and editable medical profiles.",
       image: "/images/medicare.png",
-      gif: "/videos/MediScan.gif",
+      // gif: "/videos/mediscan.mp4",
       tags: ["React", "Node.js", "Express.js", "MongoDB", "TailwindCSS", "LLM", "JWT Auth", "Google Sign-In","Khalti"],
       github: "https://github.com/subhashadhikari057/MediScan",
       live: "https://medi-scan-i7ok.vercel.app/",
